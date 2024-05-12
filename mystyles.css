@@ -1,0 +1,770 @@
+/* Enable custom fonts */
+@font-face {font-family: "SuperGroteskA";
+
+   src: url('assets/supergroteska-rg.ttf')format('truetype'); 
+ 
+ }
+ @font-face {font-family: "poppins";
+
+   src: url('assets/Poppins-Regular.ttf')format('truetype'); 
+ 
+ }
+ @font-face {font-family: "RollerScript Smooth";
+
+   src: url('assets/Rollerscript-Smooth.ttf')format('truetype');
+ 
+ }
+
+
+/* This is the main container for the page which dictates page size. */
+.front-page{width:100%;height:2000px;}
+.front-page-news{width:100%;height:3200px;}
+.menu-header{position: fixed; top: 0%; width: 100%; height:7%;
+             background-color: rgba(255, 255, 255); z-index: 2;} 
+                                                   /* Style a header section for the menu at the top of the
+                                                      page with a background colour that matches the colour scheme. RGB
+                                                      values obtained from cooler.io. Width is set to 100% so the header
+                                                      covers the page completely horizontally. Position is fixed so that
+                                                      the menu header remains at the top of the screen at all times to
+                                                      improve functionality and navigation times. A class is used so it
+                                                      is standardised across each page. Shadow at the bottom for design. */
+
+.menu-bar{text-align: center; position: absolute; right:-5vw; top: 0.5vh; width:70vw; height:7vh;
+          background-color: rgba(42, 157, 143,0.0);} /* Style a menu bar div that is positioned over the menu header with
+                                                     a complementary colour to the colour scheme. The vw allows this to
+                                                     be adjusted based on viewwidth which is how much of the website is
+                                                     is displayed on the screen from left to right. Position is fixed so
+                                                     that the menu glues to the menu header. RGBA allows alpha channel
+                                                     so I can change the opacity of the menu bar to blend with header. */
+/* This style the navigation menu items inside the menu bar. A line-height of 2em gives the text sufficient spacing from
+   the top of the menu bar. Text-decoration is set to none to ensure that the links do not change colour after they have
+   been clicked. The colour has been set to white to complement the colour scheme. A right padding and centered text
+   alignment have been used so the text is positioned in the center of their containers. The font size is in vh to
+   prevent the text from having issues when the page is zoomed in. */
+.menu-bar a{line-height: 3em; text-decoration: none; color: black; padding-right: 2%;
+            padding-left: 2%; text-align: center; font-family: SuperGroteskA; font-size: 2vh;}
+/* This borders the bottom of menu navigational link containers with a white border so the user knows exactly what they
+   are about to click. Border radius set so the underscore wraps the text slightly*/
+.menu-bar a:hover{border: 1px; border-color: black; border-style: solid; border-radius:5px; border-right:none;
+                  border-left:none; border-top:none}
+/* .search-bar{position: absolute; width:100%; height:3.8vh; background-color: rgba(42, 157, 143, 0.7);z-index:5} /* Position the search bar over the top
+                                                       of the page slightly
+                                                       underneath the menu bar. Make the position fixed so it becomes
+                                                       attached the menu header. Vh allows the specification of where
+                                                       the search bar is placed in relation to the viewheight that is
+                                                       the amount of website displayed vertically on a screen. */
+/*#search-box{position:relative; left:60.9%; margin-top:0.4%; border-radius: 2px; font-size:2vh; text-align: left;} /* This styles the input field for the search bar.
+                                                                       Text is centered so the placeholder is positioned
+                                                                       at the centre of the search bar, and the font-size
+                                                                       allows the size of the search bar to be changed.
+                                                                       The border-radius of 5px allows the search bar
+                                                                       to subtly adopt curved corners for more
+                                                                       professionalism. Font-size uses viewheight (vh)
+                                                                       so the text does not become distorted if the user
+                                                                       zooms in or out.
+/* The charity logo is controlled by this style. It's position is fixed so it attaches to the menu header. Float is set
+   to left with other dimensions to position it in the left corner. A z-index of 4 is sufficiently high enough to ensure
+   that the logo is positioned over the menu header and other elements on the page. Object-fit has been set to cover so
+   the image does not distort when the page is zoomed in or out. */
+img.logo{position: fixed; float: left; left:5vw; top: -0.9vh; z-index: 4; height: 3vw; width: 3vw; object-fit: cover;}
+#company-name h1{position:fixed; left: 12%; top: -1%; font-weight:500; font-size:3vh}  /* Move the paragraph text towards the right */
+#company-name h2{position:fixed; left: 20%; top: -1.5%; font-size:3vh; font-weight:lighter }
+/* Div placed at the top left of the home page */
+#create-account-button-home{position:fixed; display:flex; justify-content: center; text-align:center; top:0px; right:0px; width: 18%; height: 7vh;
+                            background-color: rgb(40, 54, 24);}
+#create-account-button-home a{display: grid; line-height: 4em; margin-left: 20%; color: white; font-size: 1.8vh;text-decoration: none;}
+.testimony-container{position: absolute; width: 100%; height:80%; background-color: white; z-index: 0;
+                     } /* This controls the style for the testimony container. Now the position is set
+                                            to absolute, giving the container the freedom to move on the screen when the
+                                            user scrolls the page. The top of the container starts at the top 20% of the
+                                            page which is just where the menu header ends. And a width of 100% tells the
+                                            browser to make sure the container fills the screen from left to right. The
+                                            height of 80% means the container will then fill the remainder of the screen
+                                            from underneath the top 20% of the screen to the bottom. Object-fit has been
+                                            set to cover to prevent distortion on zoom. */
+/* The # is used this time because this now refers to an id. I have chosen to use id because this element won't be used
+   on any other pages. This element is contained in the testimony container so width and height is set 100% so it fills
+   this space entirely. If the video doesn't load, the container will become visible and give the website
+   professionalism. The object-fit has been set to cover so that the video keeps its original aspect ratio during
+   resizing. Z-index means it is placed over the testimony container. */
+#background-video{width: 100%; height: 100%; object-fit: cover; position: relative; z-index: -1;}
+/* The testimony is placed at the centre of the testimony container. The background colour used is part of the colour
+   scheme and a border radius has been set for rounded corners. A added to rgb to access alpha channel for opacity.*/
+.testimony{position: absolute; right: 4vw; top: 15vh; width:40vw; height:30vh; z-index:20;
+           background-color: rgba(255, 255, 255z 0.01);}
+/* This controls the style of the text that is placed in the testimony div. Text has been centered, font-size set in vh
+   to prevent zoom distortion. Colour set to white to complement colour theme. */
+.testimony p{text-align: center; font-size: 3vh; font-family: SuperGroteskA; color: black; text-align: center;
+             font-weight: 280; margin-left:5%; margin-right:5%; letter-spacing: 0.05em;}
+.testimony h1{font-size:3.5vh; font-weight: 500; font-family:'Times New Roman'; color:rgb(40, 54, 24);
+              letter-spacing: 0.1em;}
+/* Make the bold not too thick */
+.testimony p b{font-weight:500}
+/* The positions the donate button inside the testimony container towards the bottom. Justify-content has been set to
+   centre so the text is placed in the center of the donate button container. */
+.donate-button{position: absolute; left: 30.7vw; top: 65vh; width: 7.5vw; height: 8vh; z-index:11; 
+               font-family: SuperGroteskA; font-size: 1.7vh; justify-content: center;}
+/* This style controls the donate button link. Padding and margin is used so the link is tucked into the box.
+   The transition allows for the animation to be played smoothly. */
+.donate-button a{position: absolute; background: rgba(40, 54, 24); text-decoration: none; justify-content: center;
+                 color:white; padding: 21px 20px 19px; transition: 0.3s; border:1px; border-style:solid;
+                 border-color:rgb(40, 54, 24); letter-spacing: 0.1em}
+.donate-button b{font-weight:700;}
+/* When the donate button link is hovered over, this will increase the letter spacing slightly to give the impression
+   that the button is expanding for animation sake. */
+.donate-button a:hover{background:white; color:black}
+
+/* Filler text */
+#middle-page{position:absolute; top:98%; width:180%; height:40%; justify-content: center;}
+#middle-page p{margin:2% 36% 0% 36%; text-align: center; font-size:2.5vh; font-family:supergroteska; letter-spacing: 0.05em;
+               color:rgb(110, 107,102)}
+#middle-page h1{margin-top: 5%;text-align: center; font-size:3vh; font-family:'Times New Roman', Times, serif;
+                font-weight:200; letter-spacing: 0.2em; color:rgb(96, 108, 56); padding-top:1%}
+#crown{position:absolute; height:60px; width:60px; left:48%;}
+
+/*Filler decoration*/
+#bottom-page{position:absolute; top:142.7%; width:200%; height:55%; margin-left:-10%; background:rgb(40, 54, 24)}
+#bottom-page h1{color:white; font-size:8vh; margin-top: 8%;float:left; margin-left:12%; font-family:poppins;
+                letter-spacing: 0.06em; font-weight:400 }
+#bottom-page p{color:white; font-size:3vh; margin-top: 15%;float:left; margin-left:-25%; font-family:supergroteska;
+                letter-spacing: 0.06em; font-weight:400 }
+#hospital-patient{position:absolute; object-fit: cover; width:40.4%; left: 54%;}
+
+/* Text placed on top of the background video describing what the charity does */
+.front-page-what-we-do{position:absolute; top: 7%; right: 45%; width:50%; height:100%; background-color: rgba(255,255,255, 0.8); font-size:5vh; z-index:0}
+.stats-row ul{list-style-type: none; margin-left:-4%; color:black;display:flex; justify-content:space-evenly;
+              font-size:2vh; font-weight:300}
+/* An arrow is positioned to the left of the page with object-fit cover to ensure its aspect ratio doesn't distort. */
+img.arrow{position: fixed; float: left; right:1%; top: 85vh; z-index: 4; height: 7vw; width: 7vw; object-fit: cover;
+          z-index: 0; transform:rotate(180deg) scale(0.5); z-index:5; background-color: white; border-radius:300px;}
+/* This makes sure the arrow animation is played smoothly */
+.arrow-animation img{transition: 2s;}
+/* This sets the action that will be performed when the arrow is hovered over. Scale means it zooms in by 30% of it's
+   size and the rotate causes the element to spin for visual appeal. */
+.arrow-animation:hover img {scale:1.3; translate:0px, 200px}
+/* When the logo is hovered over it will be animated to expand and tilt slightly by 5 degrees clockwise. */
+img.logo:hover{transform: scale(1.3) rotate(5deg);}
+
+/* This controls the positioning of the header section of the menu for the accounts pages. The header section on the
+   accounts pages is slighty thinner than the main header for the other pages which is why a new class has been created. */
+.menu-header-accounts{position: fixed ; top: 0px; width: 100%; height:10%; border: 1px;
+                      border-color: black; background-color: white;z-index: 1;}
+/* This positions the menu bar for the accounts pages towards the right of the accounts page's header section. */
+.menu-bar-accounts{text-align: center; position: fixed; right:7vw; top: 3vh; width:35%;
+                   height:5vh; background-color: white;container-type: inline-size;}
+/* Line-height gives the navigation links enough room from the top of their container. Text-decoration set to none to
+   prevent them from being underscored or changing colour. Colour set to white to match colour theme. Padding and text 
+   alignment applied so the text stays in proportion with their container. Font size means the font will be set to the
+   container width which helps to prevent distortion issues upon zooming in or out. */
+.menu-bar-accounts a{line-height: 2.5em; text-decoration: none; color: white;
+                     padding-right: 5%; padding-left: 5%; font-family: SuperGroteskA; font-size: 3cqw;}
+/* This contains the search box that is hidden in the accounts menu */
+.search-expansion{text-align: center; position: fixed; right:7vw; top: 8px; width:10px;
+                  height:5px; background-color: rgb(96, 108, 56); display:none;}
+/* This controls the style for the search navigation selection in the accounts menu. When this element is hovered over,
+   It then displays the block containing the search bar underneath. */
+.search-icon:hover + .search-expansion{display:block;}
+.search-icon:hover ~ .search-expansion{text-align: center; position: fixed; right:7vw; top: 8px; width:10px;
+    height:5px; background-color: rgb(96, 108, 56);}
+/* Increase the scale to make the buttons pop out from the menu when hovered over */
+.menu-bar-accounts img:hover{transform:scale(1.3);}
+.menu-bar-accounts img{position: relative; height:25px; margin-top: 7px;
+                       display: inline-block}
+/* This positions the logo at the top left of the screen in the header section and is fixed to here. Z-index of 4
+   ensures that it is placed over this header section and over other elements on the page. Object-fit prevents
+   ratio-aspect distortions. */
+.logo-accounts{position: fixed; float: left; left:5vw; top: 0vh; z-index: 4; height: 4vw; width: 4vw; object-fit: cover;}
+.logo-accounts:hover{transform: scale(1.3) rotate(5deg);} /* When the charity logo in the accounts pages are hovered over,
+                                                             this expands and tilts the logo slightly */
+/* This is the main container for the page which dictates page size. */
+.shop-front-page{width:100%;height:2500px;}
+/* This container is where the shop front image sits inside. It's width of 100% allows it to cover the entirety of the
+   screen from left to right. Object-fit prevents ratio aspect distortions for the image contained. */
+.shop-main-container{position: relative; top: 40px; width: 100%; height:1%; background-color: white; object-fit: cover;}
+/* This is the image that sits inside the main shop container. The z-index of -1 keeps the image in the background and
+   prevents it from overshadowing other elements. */
+#shop-main-image{position:relative; justify-content: center; width: 100%; z-index: -1;}
+/* This container is the space between the image and the divisions that follow underneath. It has a border only on the
+   bottom so that it provides a line to construct the boxes underneath. Z-index of 0 allows it to be placed over the
+   background image and act as a crop to remove excess image. */
+.shop-bridge-container{position:relative; top: 1000px; width: 100%; height:17vh;
+                       background-color: white;border:1px; border-style:solid; border-top: 0px; border-left: 0px; 
+                       border-right: 0px; z-index: 0;}
+/* This styles the text inside the bridge container for the shop. Justify content and text-alignment places this in the
+   centre of the container. The font-size is in cqw to prevent zoom distortion and make the font size adjust in relation
+   to the container's size. */
+.shop-bridge-container p{position: relative; justify-content: center; text-align: center; font-family:poppins;
+                         font-size:1.4cqw; line-height: 5.6em;}
+/* This styles the 3 boxes that will contain the images and text for each product. */
+#product1{position: absolute; top: 17vh; height:80vh; width: 33.333%; border:1px; border-style: solid;}
+#product2{position: absolute; top: 17vh; height:80vh; left:66.01%; width: 33.333%; border:1px; border-style: solid;}
+#product3{position: absolute; top: 17vh; height:80vh; right:34%; width: 32.5%; border:1px; border-style: solid;
+          border-right: 0px; border-left:0px}
+/* This positions the product's image into their respective box, with an object-fit parameter ensuring that it maintains
+   the original aspect ratio. When the image is hovered over it expands and tilts slightly for animation. */
+#product2-image{position:absolute; height:80vh; right:65.3vw; width: 100%;object-fit: cover; z-index: -1; transition: 2s;}
+#product2-image:hover{z-index: 2; transform: scale(1.3) rotate(5deg);}
+/* This places the containers for text at the bottom of each product box */
+#product1-text-box{position: absolute; top: 87vh; left:66.01%; height:10vh; width: 33.333%; border:1px;
+                   border-style: solid;}
+#product2-text-box{position: absolute; top: 87vh; height:10vh; width: 33.333%; border:1px; border-style: solid;
+                   z-index: 0; background-color: white;}
+#product3-text-box{position: absolute; top: 87vh; right:34%; height:10vh; width: 32.5%; border:1px; border-style: solid;
+                   border-right:0px; border-left:0px;}
+/* This adjusts the text for each box to have a font size that is relation to the box so does not become distorted if
+   the page is zoomed. It also adjusts the line height so the text has enough headroom to be positioned in the centre. */
+#product1-text-box p, #product2-text-box p, #product3-text-box p{font-size: 0.80cqw; line-height: 2em;}
+
+
+/* This defines the entire login page's dimensions */
+.login-front-page{width:100%;height:1000px;}
+/* This positions the login container for the background image to take up the entirety of the screen. Background is set
+   to white in case the image does not load. */
+.login-main-container{position: relative; top: 40px; width: 100%; height:1%; background-color: white;}
+/* This placed the background image for the login page at the centre of the main login container with the z-index keeping
+   the element in the background. */
+#login-main-image{position:relative; justify-content: center; width: 100%; z-index: -1;}
+
+/* This container is where the email address field, password field etc will be positioned. The background colour and
+   border has been set to match the colour scheme */
+#login-container{position: absolute; top: 27vh; left:8%; height:60vh; width: 33.333%; background-color:rgb(96, 108, 56);
+                 border:0.5px; border:solid; border-color: rgb(40, 54, 24);}
+/* This is where the elements related to account creation will be placed */
+#create-account-container{position: absolute; top: 27vh; right:8%; height:45vh; width: 33.333%;
+                          background-color:rgb(96, 108, 56); border:0.5px; border:solid; border-color: rgb(40, 54, 24)}
+/* This sets the style for the heading of the login and account creation containers for consistency. The margin is set
+   to give the text enough space from the left to look well placed. */
+#login-container h1, #create-account-container h1{font-family: SuperGroteskA; color: white; margin-left: 2%}
+/* This sets the style for the paragraph texts of the login and account creation containers. The font size is set as cqw
+   so the text scales with the container's dimensions. */
+#login-container p, #create-account-container p{font-family: SuperGroteskA; color: white; margin-left: 2%; font-size: 1.5cqw;}
+/* These control minor text aspects such as font size, font colour and margins */
+#login-email-box{font-size:4vh;}
+.login-email-form{margin-left:2%}
+#login-password-box{font-size:4vh;}
+.login-password-form{margin-left:2%}
+/* This makes sure the forgotten email and password links are black and underscored to differentiate it from other text. */
+.login-email-form a{text-decoration: underline; line-height: 2em;  color:black;}
+.login-password-form a{margin-left:20%; line-height: 2em;text-decoration: underline; color:black;}
+/* This positions the login button in the lower right of the login container and creates an animation that increases
+   letter spacing to give the illusion of the box moving */
+.login-button{position: relative; left: 50%; bottom: 10%; width: 50%; height: 5vh; z-index:11;
+              font-family: SuperGroteskA; font-size: 3vh; justify-content: center; z-index:0}
+.login-button a{position: relative; background: rgb(40, 54, 24); text-decoration: none;
+                justify-content: center; color:white; margin-left: 3vw; padding: 10px 30px; transition: 0.5s;}
+.login-button a:hover{letter-spacing: 0.04em;}
+/* This positions the container for the about section to be placed underneath the main login container. Background is set
+   to white to match the colour scheme. */
+.login-about-container{position: relative; top: 40%; width: 100%; height:32%; background-color: rgb(225, 225, 225);}
+/* This styles the 3 boxes that will contain the images and text for each about section. */
+#about1{position: absolute; left: 5%;top: 20vh; height:50vh; width: 23%; border:1px; border-style: solid;}
+#about2{position: absolute; left: 28%;top: 20vh; height:50vh; width: 24%; border:1px; border-style: solid; border-left:0px;}
+#about3{position: absolute; left: 52%;top: 20vh; height:50vh; width: 24%; border:1px; border-style: solid; border-right:0px;}
+#about4{position: absolute; left: 72%;top: 20vh; height:50vh; width: 23%; border:1px; border-style: solid;}
+/* This container is the space between the image and the divisions that follow underneath. It has a border only on the
+   bottom so that it provides a line to construct the boxes underneath. */
+.login-bridge-container{position:relative; width: 100%; height:20vh; background-color: rgb(225, 225, 225);}
+/* This styles the text inside the bridge container for the shop. Justify content and text-alignment places this in the
+centre of the container. The font-size is in cqw to prevent zoom distortion and make the font size adjust in relation
+to the container's size. */
+.login-bridge-container h1{position: relative; justify-content: center; text-align: center; font-family:poppins;
+                         font-size:2cqw; line-height: 5em; color:black}
+.login-about-container p{position: relative; justify-content: center; text-align: center; font-family:poppins;
+                         font-size:1cqw; line-height: 1.5em;}
+/* This only affects paragraph text in this container. It sets the font size in relation to the container to prevent
+   scale issues. */
+#create-account-container p, ul{font-size:1.2cqw; color:white; font-family: SuperGroteskA;}
+
+/* Position the register button at the bottom right corner of the create account container and animate the button when hovered */
+.register-button{position: relative; left: 30%; bottom: 1%; width: 70%; height: 5vh; z-index:11;
+                 font-family: SuperGroteskA; font-size: 3vh; justify-content: center; z-index:0}
+.register-button a{position: relative; background: rgb(40, 54, 24); text-decoration: none;
+                   justify-content: center; color:white; margin-left: 3vw; padding: 10px 30px; transition: 0.5s;}
+.register-button a:hover{letter-spacing: 0.04em;}
+
+/* This places the containers for text at the bottom of each product box */
+#about1-text-box{position: absolute; left: 5%;top: 55vh; height:15vh; width: 23%; border:1px; border-style: solid;}
+/* Add left margin because of position inconsistency */
+#about1-text-box p{margin-left:2%}
+#about2-text-box{position: absolute; left: 28%;top: 55vh; height:15vh; width: 24%; border:1px; border-style: solid; border-left:0px;}
+#about3-text-box{position: absolute; left: 52%;top: 55vh; height:15vh; width: 20%; border:1px; border-style: solid; border-right:0px;}
+#about4-text-box{position: absolute; left: 72%;top: 55vh; height:15vh; width: 23%; border:1px; border-style: solid;}
+/* This positions the about's image into their respective box, with an object-fit parameter ensuring that it maintains
+   the original aspect ratio. When the image is hovered over it expands and tilts slightly for animation. */
+#about1-image{position:absolute; height:200px; left:10vw; width: 200px;object-fit: fill; z-index: 0; transition: 2s;}
+#about2-image{position:absolute; height:200px; left:33vw; width: 200px;object-fit: fill; z-index: 0; transition: 2s;}
+#about3-image{position:absolute; height:200px; left:54vw; width: 200px;object-fit: fill; z-index: 0; transition: 2s;}
+#about4-image{position:absolute; height:200px; left:75vw; width: 200px;object-fit: fill; z-index: 0; transition: 2s;}
+/* This positions the container for the donate section of the login page to be placed underneath the about container.
+   Background is set to white to match the colour scheme. */
+.login-donate-container{position: relative; top: 75%; width: 100%; height:70%; background-color: rgb(225, 225, 225);}
+/* The positions the donate button inside the donate container in the login page towards the bottom. Justify-content has
+   been set to centre so the text is placed in the center of the donate button container. */
+.donate-button-login{position: absolute; left: 34vw; bottom: -25vh;height: 5vh; z-index:11;
+    font-family: SuperGroteskA; font-size: 10vh; justify-content: center;}
+/* This style controls the donate button link. Padding and margin is used so the link is tucked into the box.
+The transition allows for the animation to be played smoothly. */
+.donate-button-login a{position: absolute; background:rgb(40, 54, 24); text-decoration: none; justify-content: center;
+      color:white; margin-left: 3vw; padding: 10px 30px; transition: 0.5s;}
+/* When the donate button link is hovered over, this will increase the letter spacing slightly to give the impression
+that the button is expanding for animation sake. */
+.donate-button-login a:hover{letter-spacing: 0.25em;}
+/* This controls the positioning of the header section of the menu for the accounts pages. The header section on the
+   accounts pages is slighty thinner than the main header for the other pages which is why a new class has been created */
+.menu-footer-accounts{position: absolute ; bottom: -161vh; width: 100%; height:10%; border: 1px;
+                      border-color: black; background-color: rgb(40, 54, 24);z-index: 1;}
+.menu-footer-accounts1{position: absolute ; bottom: -26vh; width: 100%; height:10%; border: 1px;
+                      border-color: black; background-color: rgb(40, 54, 24);z-index: 1;}
+.menu-footer-accounts-news{position: absolute ; bottom: -323vh; width: 100%; height:10%; border: 1px;
+                           border-color: black; background-color: rgb(40, 54, 24);z-index: 1;}
+/* This positions the menu bar for the accounts pages towards the right of the accounts page's header section. */
+.menu-bar-footer-accounts{text-align: center; position: absolute; right:1vw; top: 3vh; width:35%;
+                   height:5vh; background:none;container-type: inline-size;}
+/* Line-height gives the navigation links enough room from the top of their container. Text-decoration set to none to
+   prevent them from being underscored or changing colour. Colour set to white to match colour theme. Padding and text 
+   alignment applied so the text stays in proportion with their container. Font size means the font will be set to the
+   container width which helps to prevent distortion issues upon zooming in or out. */
+.menu-bar-footer-accounts a{line-height: 2em; text-decoration: none; color: white;
+                            padding-right: 5%; padding-left: 5%; text-align: center; font-family: SuperGroteskA; font-size: 3cqw;}
+/* Create a white border when the links are hovered over. Border-radius set so the corners are rounded. */
+.menu-bar-footer-accounts a:hover{border: 1px; border-color: white; border-style: solid; border-radius:2px}
+/* This positions the menu bar for the accounts pages towards the right of the accounts page's header section. */
+.menu-bar-footer-accounts-socials{text-align: center; position: absolute; left:-8vw; top: 3vh; width:60%;
+                                  height:5vh; background:none;container-type: inline-size;}
+/* Line-height gives the social media icons enough room from the top of their container. Text-decoration set to none to
+   prevent them from being underscored or changing colour. Padding applied so the icons stays in proportion with their
+   container. Font size means the font will be set to the container width which helps to prevent distortion issues upon
+   zooming in or out. */
+.menu-bar-footer-accounts-socials a{line-height: 2em; text-decoration: none;
+                            padding-right: 2%; padding-left: 2%; font-family: SuperGroteskA; font-size: 2cqw;}
+.menu-bar-footer-accounts-socials img{position: relative; margin-left: 9%; margin-right: -7%; margin-top: -3.4%;
+                                      display: inline-block}
+/* Show that the charity complies legally. Position this at the bottom.*/
+.legal-note{position:absolute; top: 263vh; font-family: SuperGroteskA; font-size: 11pt; z-index: 50; margin-left: 5%;}
+.legal-note-accounts{position:absolute; top: 128vh; font-family: SuperGroteskA; font-size: 11pt; z-index: 50; margin-left: 5%;}
+.legal-note-news{position:absolute; top: 425vh; font-family: SuperGroteskA; font-size: 11pt; z-index: 50; margin-left: 5%;}
+/* This positions the container for the about section to be placed underneath the video container. Background is set
+   to white to match the colour scheme. */
+.about-container{position: relative; top: 50%; width: 100%; height:32%;}
+/* This styles the 4 boxes that will contain the images and text for each about section. Alternating colours to avoid using a border */
+#home-about1{position: absolute; right: 5%;top: 15vh; height:25vh; width: 20%; border:0px; border-color:white;
+             border-style: solid; background-color: rgb(96, 108, 56); border-radius:10px;}
+#home-about2{position: absolute; right: 28%;top: 15vh; height:25vh; width: 20%; border:0px; border-color:white;
+             border-style: solid; border-right:0px; background-color: rgb(96, 108, 56); border-radius:10px;}
+#home-about3{position: absolute; right: 5%;top: 45vh; height:25vh; width: 20%; border:0px; border-color:white;
+             border-style: solid; border-top:0px; background-color: rgb(96, 108, 56); border-radius:10px;}
+#home-about4{position: absolute; right: 28%;top: 45vh; height:25vh; width: 20%; border:0px; border-color:white;
+             border-style: solid; border-top:0px; background-color: rgb(96, 108, 56);
+             border-right:0px; border-radius:10px;}
+/* This places the containers for text at the bottom of each product box. No border at the top so the colours blends better */
+#home-about1-text-box{position: absolute; right: 5%;top: 32vh; height:8vh; width: 23%; border:0px; border-color:white;
+                      border-style: solid; text-align: center; font-family: SuperGroteskA; color: white; border-top:0px; font-size:3vh;}
+#home-about2-text-box{position: absolute; right: 28%;top: 32vh; height:8vh; width: 24%; border:0px; border-color:white; border-style: solid;
+                      border-right: 0px; border-left:0px; text-align: center; font-family: SuperGroteskA; color: white; border-top:0px; font-size:3vh;}
+#home-about3-text-box{position: absolute; right: 5%;top: 62vh; height:8vh; width: 23%; border:0px; border-color:white; border-style: solid;
+                      border-bottom:0px; text-align: center; font-family: SuperGroteskA; color: white; border-top:0px; font-size:3vh;}
+#home-about4-text-box{position: absolute; right: 28%;top: 62vh; height:8vh; width: 24%; border:0px; border-color:white; border-style: solid;
+                     border-left:0px; border-bottom: 0px; border-right:0px; text-align: center; font-family: SuperGroteskA; color: white; border-top:0px; font-size:3vh;}
+/* This positions the about's image into their respective box, with an object-fit parameter ensuring that it maintains
+   the original aspect ratio. When the image is hovered over it expands and tilts slightly for animation. */
+#home-about1-image{position:absolute; top: 15vh;height:17vh; right:28%; width: 20%;object-fit: cover; z-index: 1; transition: 2s;}
+#home-about2-image{position:absolute; top: 15vh;height:17vh; right:5%; width: 20%;object-fit: cover; z-index: 1; transition: 2s; }
+#home-about3-image{position:absolute; top: 45vh;height:17vh; right:5%; width: 20%;object-fit: cover; z-index: 1; transition: 2s;}
+#home-about4-image{position:absolute; top: 45vh;height:17vh; right:28%; width: 20%;object-fit: cover; z-index: 1; transition: 2s;}
+/* Animation for the about images that zooms them in and tilts them slightly. Z-index 2 means it will pop over the other elements.
+   They tilt away from each other for more design. */
+#home-about1-image:hover{z-index: 2; transform: scale(1.3) rotate(-5deg);}
+#home-about2-image:hover{z-index: 2; transform: scale(1.3) rotate(5deg);}
+#home-about3-image:hover{z-index: 2; transform: scale(1.3) rotate(5deg);}
+#home-about4-image:hover{z-index: 2; transform: scale(1.3) rotate(-5deg);}
+/* Place a text box in the about container for the home page */
+#about-text-container{position:absolute; top:58vh; height:35vh; width:55%; left:7%; background-color: rgb(96, 108, 56);}
+#about-text-container h1{font-family: SuperGroteskA; font-size: 4vh; color: white; margin-left: 5%;}
+#about-text-container p{font-family: SuperGroteskA; font-size: 2.5vh; color: white; margin-left: 5%; margin-right:5%;
+                        letter-spacing: 0.03em;}
+
+#stats{position:absolute; top:58vh; height:30vh; width:75%; right:-75%; background-color: white; border-top: 0px;
+       border-right: 0px; border-left: 0px; border-bottom: 1px; border-style:solid; border-color: rgb(96, 108, 56);}
+#stats h1{margin-left:69%; line-height:3em; color:rgb(40, 54, 24); font-size:5vh}
+#stats h2{text-align:center; margin-right: 6%; margin-top:-20.1%; color:rgb(40, 54, 24); font-size:5vh}
+#stats h3{margin-left:12%; margin-top:-16.1%; color:rgb(40, 54, 24); font-size:5vh}
+/* Set all hyperlinks in this container's text decoration to none and colour to white */
+.about-container a{text-decoration: none; color:white}
+/* Change the text decoration to colour scheme colour when hovered over */
+.about-container a:hover{color:rgb(40, 54, 24)}
+
+/* Disabled: Create a learn more button with colour scheme background */
+#learn-more-button{position:absolute; top:40vh; height:10vh; width:15%; left:60%; background-color: rgba(40, 54, 24, 0.01); }
+#learn-more-button h1{color:rgba(255, 255, 255, 0.01); font-family:supergroteska; font-size:4vh; justify-content: center; padding-left: 3%;}
+#learn-more-button a{text-decoration: none; color:rgba(225, 225, 225, 0.01); transition: 0.3s;}
+/* Increase letter spacing when the learn more button hovered over for animation */
+#learn-more-button a:hover{letter-spacing: 0.1em; background-color: rgb(40, 54, 24)}
+/* Opacity changed to blend background image into background */
+#newsletter-signup-container{position: relative; bottom: -50%; width: 100%; height:80%; opacity:10%;}
+#newsletter-text-container{position:absolute; bottom:-68%; height:28vh; width:35%; left:15%; background-color: rgba(0, 0, 0,0.0);}
+#newsletter-text-container h1{font-family: 'Times New Roman', Times, serif; font-size: 2.8vh; color: rgb(96, 108, 56);
+                              margin-left: -5%; letter-spacing:0.1em;}
+#newsletter-text-container p{font-family: SuperGroteskA; font-size: 2.5vh; color: black; margin-left: -5%; margin-right:5%;
+                             margin-top:0%;}
+
+/* Position the email, first and last name submission fields at the bottom of the page */
+.newsletter-firstname-form{position:absolute;right:30%; bottom:-34%}
+#newsletter-firstname-box{font-size:2.5vh}
+
+.newsletter-lastname-form{position:absolute;right:30%; bottom:-43%}
+#newsletter-lastname-box{font-size:2.5vh}
+
+.newsletter-email-form{position:absolute;right:30%; bottom:-53%}
+#newsletter-email-box{font-size:2.5vh}
+
+.newsletter-email-form-news{position:absolute;left:90%; bottom:30%}
+#newsletter-email-box2{font-size:2.5vh}
+
+.newsletter-signup-button{position: absolute; left: 48vw; top: -0.5vh; width: 7.5vw; height: 8vh; z-index:1; 
+                          font-family: SuperGroteskA; font-size: 1vh; justify-content: center;}
+
+.newsletter-signup-button a{position: absolute; background: rgb(225, 225, 225); text-decoration: none; justify-content: center;
+   color:white; padding: 21px 20px 19px; transition: 0.3s; border:1px; border-style:solid;
+   border-color:black; letter-spacing: 0.1em; font-family: SuperGroteskA;}
+.newsletter-signup-button b{font-weight:700; font-family: SuperGroteskA; font-size:2vh; text-align: center;}
+/* When the donate button link is hovered over, this will increase the letter spacing slightly to give the impression
+that the button is expanding for animation sake. */
+.newsletter-signup-button a:hover{background:black; color:rgb(225, 225, 225); font-family: SuperGroteskA;}
+.newsletter-signup-button b:hover{background:black; color:rgb(225, 225, 225); font-family: SuperGroteskA;}
+
+/* Fix the page from having a gap on the left */
+body{margin:0; padding:0; font-family:poppins}
+
+/* This controls the positioning of the header section of the menu for the accounts pages. The header section on the
+   accounts pages is slighty thinner than the main header for the other pages which is why a new class has been created.
+   Shadow at the bottom for aesthetics. */
+.menu-header-otherpages{position: fixed ; top: 0px; width: 100%; height:10%; border: 1px;
+                      border-color: black; background-color: rgb(40, 54, 24);z-index: 1;}
+/* Change menu header p to lighter so text is thinner */
+.menu-header-otherpages p{font-weight: lighter;}
+/* Position a narrow menu section at the top left of the screen */
+.menu-bar-narrow{text-align: center; position: fixed; right:7vw; top: 3vh; width:5%;
+   height:5vh; background-color: rgb(96, 108, 56);container-type: inline-size; border-radius: 20px; z-index:-1}
+/* Position hamburger menu icon on the menu bar at the top left */
+.menu-bar-narrow img:hover{border: 1px; border-color: white; border-style: solid;}
+.menu-bar-narrow img{position: relative; height:25px; margin-top: 7px;
+                       display: inline-block; z-index:-1}
+/* Display the name of the current page h1 on the menu bar. Line height set to stop the text from being placed too far down */
+.menu-header-otherpages p{position: absolute; left: 15%;  font-family: SuperGroteskA; line-height:1em; color:white; font-size:3.5vh;}
+
+/* Create a learn more button with colour scheme background */
+#newsletter-submit-button{position:absolute; top:71vh; height:10vh; width:13%; right:8%; background-color: rgb(40, 54, 24);}
+#newsletter-submit-button h1{color:white; font-family:poppins; font-size:4vh; justify-content: center; padding-left: 3%;}
+#newsletter-submit-button a{text-decoration: none;
+                            color:white;transition: 0.5s;}
+/* Container that informs the user how their data will be handled */
+#newsletter-legal-container{position: relative; bottom: -100%; width: 100%; height:5%; background-color: rgba(42, 157, 143, 0);}
+#newsletter-legal-text-container{position:absolute; bottom:-35%; height:5vh; width:18%; right:13%; background-color: rgba(42, 157, 143, 0);}
+#newsletter-legal-text-container p{font-family: SuperGroteskA; font-size: 2.5vh; color: black; margin-left: 5%; margin-right:5%; }
+
+.newspage-container{position: absolute; top: 5%; width: 100%; height:85%; background-color: blueviolet; z-index: 0;
+ } /* This controls the style for the testimony container. Now the position is set
+                        to absolute, giving the container the freedom to move on the screen when the
+                        user scrolls the page. The top of the container starts at the top 20% of the
+                        page which is just where the menu header ends. And a width of 100% tells the
+                        browser to make sure the container fills the screen from left to right. The
+                        height of 80% means the container will then fill the remainder of the screen
+                        from underneath the top 20% of the screen to the bottom. Object-fit has been
+                        set to cover to prevent distortion on zoom. */
+/* Place the background video for the news inside the newspage container. Object-fit is used so the aspect ratio is kept
+   the same. */
+#background-video-image{width: 100%; height: 115%; object-fit: cover; position: relative; z-index: -1;}
+/* The background colour uses rgba so that the transparency of the div can be adjusted. This is for better text visibility */
+.latest-news{position: absolute; top: 0vh; width:100%; height:56vh; z-index:10;}
+.latest-news p{position:absolute; justify-content: center; text-align:center; margin-top:10%; margin-left:42%;
+               font-family:SuperGroteskA; font-size: 5vh; color:white; font-weight:400;}
+
+/* Wrapper allows the news page to scroll */
+.wrapper{margin-top:18%;display:grid; gap: var(--size-3); grid-auto-flow:column; grid-auto-columns:56%;overflow-x:auto;
+         overscroll-behavior-inline: contain; -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */ }
+.wrapper::-webkit-scrollbar {display:none}
+.news-article-container{background: rgb(225, 225, 225); width:90%; border-radius:20px}
+.news-article-container img{position:relative;height:100%; width:70%; right:7%; object-fit: cover;}
+.news-article-container p{position: absolute; font-size:4vh }
+
+#news-article-container1{position: absolute; top: 35vh; right:25%; background-color: white; width: 50%; height:60%;}
+/* Position the div to the bottom of the news image to separate it from the rest of the page's contents */
+.news-bridge-container{position:absolute; top: 102.5%; width: 100%; height:20vh;
+                       background-color: rgb(225, 225, 225)}
+
+.news-individual-article-container1{position:absolute; top:128%;width:24%; height:50%; margin-left:1%;
+                                    background-image: url('assets/news1.jpg'); display:grid; object-fit:cover}
+.news-individual-article-container2{position:absolute; top:128%;width:24%; height:50%; margin-left:25.7%;
+                                    background-image: url('assets/news2.jpg'); display:grid; object-fit:cover}
+.news-individual-article-container3{position:absolute; top:128%;width:24%; height:50%; margin-left:50.3%;
+                                    background-image: url('assets/news3.jpg'); display:grid; object-fit:cover}
+.news-individual-article-container4{position:absolute; top:128%;width:24%; height:50%; margin-left:75.1%;
+                                    background-image: url('assets/news4.jpg'); display:grid; object-fit:cover}
+
+.news-individual-article-container1-text{position:absolute; top:178%; width:24%; height:30%; margin-left:1%;
+                                        background-color:white; display: grid; border: 1px; border-top:0px; border-right:2px;
+                                        border-left:2px; border-bottom:0px; border-style:solid; border-color: rgb(225, 225, 225)}
+.news-individual-article-container2-text{position:absolute; top:178%; width:24%; height:30%; margin-left:25.7%;
+                                         background-color:white; display: grid; border: 1px; border-top:0px; border-right:2px;
+                                         border-left:0px; border-bottom:0px; border-style:solid; border-color: rgb(225, 225, 225)}
+.news-individual-article-container3-text{position:absolute; top:178%; width:24%; height:30%; margin-left:50.3%;
+                                         background-color:white; display: grid; border: 1px; border-top:0px; border-right:2px;
+                                         border-left:0px; border-bottom:0px; border-style:solid; border-color: rgb(225, 225, 225)}
+.news-individual-article-container4-text{position:absolute; top:178%; width:24%; height:30%; margin-left:75.1%;
+                                         background-color:white; display: grid; border: 1px; border-top:0px; border-right:2px;
+                                         border-left:0px; border-bottom:0px; border-style:solid; border-color: rgb(225, 225, 225)}
+
+.news-individual-article-container5{position:absolute; top:220%;width:24%; height:50%; margin-left:1%;
+                                    background-image: url('assets/news5.jpg'); display:grid; object-fit:cover}
+.news-individual-article-container6{position:absolute; top:220%;width:24%; height:50%; margin-left:25.7%;
+                                    background-image: url('assets/news6.jpg'); display:grid; object-fit:cover}
+.news-individual-article-container7{position:absolute; top:220%;width:24%; height:50%; margin-left:50.3%;
+                                    background-image: url('assets/news7.jpg'); display:grid; object-fit:cover}
+.news-individual-article-container8{position:absolute; top:220%;width:24%; height:50%; margin-left:75.1%;
+                                    background-image: url('assets/news8.jpg'); display:grid; object-fit:cover}
+      
+.news-individual-article-container5-text{position:absolute; top:270%; width:24%; height:30%; margin-left:1%;
+                                         background-color:white; display: grid; border: 1px; border-top:0px; border-right:2px;
+                                         border-left:2px; border-bottom:0px; border-style:solid; border-color: rgb(225, 225, 225)}
+.news-individual-article-container6-text{position:absolute; top:270%; width:24%; height:30%; margin-left:25.7%;
+                                         background-color:white; display: grid; border: 1px; border-top:0px; border-right:2px;
+                                         border-left:0px; border-bottom:0px; border-style:solid; border-color: rgb(225, 225, 225)}
+.news-individual-article-container7-text{position:absolute; top:270%; width:24%; height:30%; margin-left:50.3%;
+                                         background-color:white; display: grid; border: 1px; border-top:0px; border-right:2px;
+                                         border-left:0px; border-bottom:0px; border-style:solid; border-color: rgb(225, 225, 225)}
+.news-individual-article-container8-text{position:absolute; top:270%; width:24%; height:30%; margin-left:75.1%;
+                                         background-color:white; display: grid; border: 1px; border-top:0px; border-right:2px;
+                                         border-left:0px; border-bottom:0px; border-style:solid; border-color: rgb(225, 225, 225)}
+
+.news-individual-article-container9{position:absolute; top:312%;width:24%; height:50%; margin-left:1%;
+                                    background-image: url('assets/news9.webp'); display:grid; object-fit:cover}
+.news-individual-article-container10{position:absolute; top:312%;width:24%; height:50%; margin-left:25.7%;
+                                     background-image: url('assets/news10.jpg'); display:grid; object-fit:cover}
+.news-individual-article-container11{position:absolute; top:312%;width:24%; height:50%; margin-left:50.3%;
+                                     background-image: url('assets/news11.jpg'); display:grid; object-fit:cover}
+.news-individual-article-container12{position:absolute; top:312%;width:24%; height:50%; margin-left:75.1%;
+                                     background-image: url('assets/news12.jpg'); display:grid; object-fit:cover}
+
+.news-individual-article-container9-text{position:absolute; top:362%; width:24%; height:30%; margin-left:1%;
+        background-color:white; display: grid; border: 1px; border-top:0px; border-right:2px;
+        border-left:2px; border-bottom:0px; border-style:solid; border-color: rgb(225, 225, 225)}
+.news-individual-article-container10-text{position:absolute; top:362%; width:24%; height:30%; margin-left:25.7%;
+        background-color:white; display: grid; border: 1px; border-top:0px; border-right:2px;
+        border-left:0px; border-bottom:0px; border-style:solid; border-color: rgb(225, 225, 225)}
+.news-individual-article-container11-text{position:absolute; top:362%; width:24%; height:30%; margin-left:50.3%;
+        background-color:white; display: grid; border: 1px; border-top:0px; border-right:2px;
+        border-left:0px; border-bottom:0px; border-style:solid; border-color: rgb(225, 225, 225)}
+.news-individual-article-container12-text{position:absolute; top:362%; width:24%; height:30%; margin-left:75.1%;
+        background-color:white; display: grid; border: 1px; border-top:0px; border-right:2px;
+        border-left:0px; border-bottom:0px; border-style:solid; border-color: rgb(225, 225, 225)}
+
+.wrapper2 h1{margin-top:4%; margin-left:4%; font-size:2.5vh; font-family:SuperGroteskA; color:darkslategray; font-weight:200}
+.wrapper2 h2{margin-left:4%; margin-top:-10%; font-size: 2.8vh; font-family:SuperGroteskA}
+.wrapper2 p{margin-left:4%; margin-top:-10%; font-size: 2.5vh; font-family:SuperGroteskA; color:darkslategray; margin-right:5%}
+.wrapper2 a{margin-left:4%; margin-top:-10%; font-size: 2vh; font-family:SuperGroteskA; color:darkslategray;
+           text-decoration: none;}
+
+/* Create a categories drop down button */
+#categories-button{position:absolute; height: 30%; width: 25%; top:32%; right:70%;}
+/* Change the colour of the hyperlink to white and position the text in the center of its container */
+#categories-button a{color: rgb(111,111,111); font-size:5vh; line-height:1em; padding: 0% 0% 0% 18%; justify-content: center;
+                     text-align:center; text-decoration:none;font-family: RollerScript Smooth}
+#categories-button img{position:absolute; object-fit: fill; height:45px; width:45px; right: 4%; bottom: 8%}
+
+#newspage-newsletter{position:absolute; top: 127.6%; width: 100%; height:25vh; background-color:rgb(225, 225, 225);
+                   }
+
+.main-accountpage-container{position:absolute; top:10%; width:100%;height:100vh; background-color:rgb(225, 225, 225)}
+.main-accountpage-container p{position:absolute;font-family:poppins; font-size: 3vh; right:40%;}
+/* This positions the login container for the background image to take up the entirety of the screen. Background is set
+   to white in case the image does not load. */
+.privacy-main-container{position: absolute; top: 10%; width: 100%; height:250%; background-color: white; text-align:left; justify-content: left;}
+.privacy-main-container h1{position: relative; font-family:poppins; font-size:3vh; text-align:left;margin-right:20%; margin-left:20%;}
+.privacy-main-container p{position: relative; font-family:poppins; font-size:2vh;color:black; margin-right:20%; margin-left:20%;}
+.privacy-main-container ol{position: relative; list-style-position:inside; font-size:2vh; text-align:left;
+                           margin-right:20%; margin-left:20%; margin-top:2%;margin-bottom:2%}
+.privacy-main-container a{text-decoration: none; color:blue}
+/* Position the dropdown menu boxes for the privacy page. No border on left on right. */
+#privacy-policy-item1{position:absolute; border:1px; border-style:solid; border-color:lightgray; border-left:none;
+                      border-right:none; width: 60%; height:7vh; margin-right:20%; margin-left:20%;
+                      margin-top:3%; cursor: pointer;}
+#privacy-policy-item1:hover{cursor: pointer;}
+#privacy-policy-item2{position:absolute; border:1px; border-style:solid; border-color:lightgray; border-left:none;
+                     border-right:none; width: 60%; height:14vh; margin-right:20%; margin-left:20%;
+                     margin-top:3%}
+#privacy-policy-item3{position:absolute; border:1px; border-style:solid; border-color:lightgray; border-left:none;
+                     border-right:none; width: 60%; height:21vh; margin-right:20%; margin-left:20%;
+                     margin-top:3%}
+#privacy-policy-item4{position:absolute; border:1px; border-style:solid; border-color:lightgray; border-left:none;
+                     border-right:none; width: 60%; height:28vh; margin-right:20%; margin-left:20%;
+                     margin-top:3%}
+#privacy-policy-item5{position:absolute; border:1px; border-style:solid; border-color:lightgray; border-left:none;
+                     border-right:none; width: 60%; height:35vh; margin-right:20%; margin-left:20%;
+                     margin-top:3%}
+#privacy-policy-item6{position:absolute; border:1px; border-style:solid; border-color:lightgray; border-left:none;
+                     border-right:none; width: 60%; height:42vh; margin-right:20%; margin-left:20%;
+                     margin-top:3%}
+#privacy-policy-item7{position:absolute; border:1px; border-style:solid; border-color:lightgray; border-left:none;
+                      border-right:none; width: 60%; height:49vh; margin-right:20%; margin-left:20%;
+                      margin-top:3%}
+#privacy-policy-item8{position:absolute; border:1px; border-style:solid; border-color:lightgray; border-left:none;
+                      border-right:none; width: 60%; height:56vh; margin-right:20%; margin-left:20%;
+                      margin-top:3%;}
+#privacy-policy-item9{position:absolute; border:1px; border-style:solid; border-color:lightgray; border-left:none;
+                     border-right:none; width: 60%; height:63vh; margin-right:20%; margin-left:20%;
+                     margin-top:3%}
+#privacy-policy-item10{position:absolute; border:1px; border-style:solid; border-color:lightgray; border-left:none;
+                     border-right:none; width: 60%; height:70vh; margin-right:20%; margin-left:20%;
+                     margin-top:3%}
+#privacy-policy-item11{position:absolute; border:1px; border-style:solid; border-color:lightgray; border-left:none;
+                     border-right:none; width: 60%; height:77vh; margin-right:20%; margin-left:20%;
+                     margin-top:3%}
+#privacy-policy-item12{position:absolute; border:1px; border-style:solid; border-color:lightgray; border-left:none;
+                     border-right:none; width: 60%; height:84vh; margin-right:20%; margin-left:20%;
+                     margin-top:3%}
+#privacy-policy-item13{position:absolute; border:1px; border-style:solid; border-color:lightgray; border-left:none;
+                     border-right:none; width: 60%; height:91vh; margin-right:20%; margin-left:20%;
+                     margin-top:3%}
+#privacy-policy-item14{position:absolute; border:1px; border-style:solid; border-color:lightgray; border-left:none;
+                     border-right:none; width: 60%; height:98vh; margin-right:20%; margin-left:20%;
+                     margin-top:3%}
+
+/* Position the button for the dropdown menu at the left side of the division */
+#plus-icon1{position:absolute; height:12px; width:12px; margin-top:2.2%; margin-left:0.1%; object-fit:cover; opacity:80%}
+#plus-icon1:hover{cursor: pointer;}
+#plus-icon2{position:absolute; top:7vh;;height:12px; width:12px; margin-top:2.2%; margin-left:0.1%; object-fit:cover; opacity:80%}
+#plus-icon3{position:absolute; top:14vh;;height:12px; width:12px; margin-top:2.2%; margin-left:0.1%; object-fit:cover; opacity:80%}
+#plus-icon4{position:absolute; top:21vh;;height:12px; width:12px; margin-top:2.2%; margin-left:0.1%; object-fit:cover; opacity:80%}
+#plus-icon5{position:absolute; top:28vh;;height:12px; width:12px; margin-top:2.2%; margin-left:0.1%; object-fit:cover; opacity:80%}
+#plus-icon6{position:absolute; top:35vh;;height:12px; width:12px; margin-top:2.2%; margin-left:0.1%; object-fit:cover; opacity:80%}
+#plus-icon7{position:absolute; top:49vh;;height:12px; width:12px; margin-top:2.2%; margin-left:0.1%; object-fit:cover; opacity:80%}
+#plus-icon8{position:absolute; top:56vh;;height:12px; width:12px; margin-top:2.2%; margin-left:0.1%; object-fit:cover; opacity:80%}
+#plus-icon9{position:absolute; top:63vh;;height:12px; width:12px; margin-top:2.2%; margin-left:0.1%; object-fit:cover; opacity:80%}
+#plus-icon10{position:absolute; top:70vh;;height:12px; width:12px; margin-top:2.2%; margin-left:0.1%; object-fit:cover; opacity:80%}
+#plus-icon11{position:absolute; top:77vh;;height:12px; width:12px; margin-top:2.2%; margin-left:0.1%; object-fit:cover; opacity:80%}
+#plus-icon12{position:absolute; top:84vh;;height:12px; width:12px; margin-top:2.2%; margin-left:0.1%; object-fit:cover; opacity:80%}
+#plus-icon13{position:absolute; top:91vh;;height:12px; width:12px; margin-top:2.2%; margin-left:0.1%; object-fit:cover; opacity:80%}
+#plus-icon14{position:absolute; top:98vh;;height:12px; width:12px; margin-top:2.2%; margin-left:0.1%; object-fit:cover; opacity:80%}
+
+
+/* Position the text for the dropdown menu by using a margin so it's not too close to the plus symbol and make the text small */
+#privacy-policy-item1 p{margin-left:4%; margin-top:1.7%; font-size:small;}
+#privacy-policy-item2 p{margin-left:4%; margin-top:1.7%; top:7vh; font-size:small;}
+#privacy-policy-item3 p{margin-left:4%; margin-top:1.7%; top:14vh; font-size:small;}
+#privacy-policy-item4 p{margin-left:4%; margin-top:1.7%; top:21vh; font-size:small;}
+#privacy-policy-item5 p{margin-left:4%; margin-top:1.7%; top:28vh; font-size:small;}
+#privacy-policy-item6 p{margin-left:4%; margin-top:1.7%; top:35vh; font-size:small;}
+#privacy-policy-item7 p{margin-left:4%; margin-top:1.7%; top:49vh; font-size:small;}
+#privacy-policy-item8 p{margin-left:4%; margin-top:1.7%; top:56vh; font-size:small;}
+#privacy-policy-item9 p{margin-left:4%; margin-top:1.7%; top:63vh; font-size:small;}
+#privacy-policy-item10 p{margin-left:4%; margin-top:1.7%; top:70vh; font-size:small;}
+#privacy-policy-item11 p{margin-left:4%; margin-top:1.7%; top:77vh; font-size:small;}
+#privacy-policy-item12 p{margin-left:4%; margin-top:1.7%; top:84vh; font-size:small;}
+#privacy-policy-item13 p{margin-left:4%; margin-top:1.7%; top:91vh; font-size:small;}
+#privacy-policy-item14 p{margin-left:4%; margin-top:1.7%; top:98vh; font-size:small;}
+
+
+#privacy-policy-item1-opened{position:absolute; width:80%; height:30%; left:10%; background-color:rgb(225, 225, 225); z-index:100; display:none}
+#privacy-policy-item1-opened p{color:black; font-size:1.6vh}
+
+
+#what-we-do-container{position: absolute; top: 30%; right:0%; width: 100%; height: 30vh;z-index:5; }
+#what-we-do-container ul{text-align: center; justify-content: center; color:white}
+#what-we-do-container h1{text-align: center; justify-content: center; color:white; font-size:100}
+#about-border{position:absolute;top:2%;right:3%; height:90%; width:95%; border:1px; border-style:solid; border-color:white;}
+#about-page-filler{position:absolute;top:90%; width:100%; height:162%;}
+#about-page-filler h1{color:black; font-size:3vh; text-align:center; font-family:SuperGroteskA; margin-top:5%}
+#about-page-filler p{color:black; font-size:2.5vh; text-align:center; font-family:SuperGroteskA;}
+#about-page-filler b{color:black; font-size:2.2vh; text-align:center; font-family:SuperGroteskA;}
+#about-page-division1{position:absolute;height:20%; width:50%; right:25%;margin-top: 5%;
+                      border:1px; border-style:solid; border-color:lightgray; border-left:0px; border-right:0px;}
+/* contain phone numbers */
+#about-page-division2{position:absolute;height:20%; width:50%; right:25%;margin-top: 21%;
+                      border:1px; border-style:solid; border-color:lightgray; border-left:0px; border-top:0px; border-right:0px;}
+#about-page-division1 h1{margin-top:10%}
+#about-page-division2 h1{margin-top:10%}
+#about-border p{position: absolute; color:white; font-size:5vh; font-weight: 270; top:35%; left:10%}
+#donate-filler{position:absolute; width:100%; height:40%; top:90%;}
+#donate-filler h1{color:brown; font-size:4vh; text-align: center; font-family: SuperGroteskA; margin-top:5%; font-weight:200}
+#donate-filler p{color:black; font-size:2.8vh; text-align: center; font-family: SuperGroteskA; margin-right:20%;
+                 margin-left:20%}
+#donate-box-container{position:absolute; width:100%; height:80%; top:130%; background-color: rgb(225, 225, 225);}
+#donate-box-container h1{position:absolute; top:35%; right:42%; font-family: SuperGroteskA; font-size:3vh; font-weight:200}
+
+#donate-amount1{position:absolute; width:100px; height:100px; background-color: black; top:50%; right: 30.2%}
+#donate-amount2{position:absolute; width:100px; height:100px; background-color: black; top:50%; right: 38%}
+#donate-amount3{position:absolute; width:100px; height:100px; background-color: black; top:50%; right: 46%}
+#donate-amount4{position:absolute; width:100px; height:100px; background-color: black; top:50%; right: 54%}
+#donate-amount5{position:absolute; width:100px; height:100px; background-color: black; top:50%; right: 62%}
+
+#donate-amount1 p{text-align:center; color:white; margin-top:38%}
+#donate-amount2 p{text-align:center; color:white; margin-top:38%}
+#donate-amount3 p{text-align:center; color:white; margin-top:38%}
+#donate-amount4 p{text-align:center; color:white; margin-top:38%}
+#donate-amount5 p{text-align:center; color:white; margin-top:38%}
+
+#donate-amount1:hover{cursor: pointer; background-color: rgb(225, 225, 225); border:1px black solid;}
+#donate-amount1:hover > p{color:black;}
+#donate-amount2:hover{cursor: pointer; background-color: rgb(225, 225, 225); border:1px black solid;}
+#donate-amount2:hover > p{color:black;}
+#donate-amount3:hover{cursor: pointer; background-color: rgb(225, 225, 225); border:1px black solid;}
+#donate-amount3:hover > p{color:black;}
+#donate-amount4:hover{cursor: pointer; background-color: rgb(225, 225, 225); border:1px black solid;}
+#donate-amount4:hover > p{color:black;}
+#donate-amount5:hover{cursor: pointer; background-color: rgb(225, 225, 225); border:1px black solid;}
+#donate-amount5:hover > p{color:black;}
+
+
+
+
+/* The following adapts the website into a responsive website (the scaling changes according to screen size */
+
+/* When a screen is at max width of 1920 px the following will be executed conditionally */
+
+@media only screen and (max-width: 1920px){
+   .menu-bar a{
+      font-size:1.9vh; line-height: 3.6em;
+   }
+   #company-name h1{position:fixed; left: 12%; top: 0%; font-size:2.5vh}
+   #company-name h2{position:fixed; left: 18.6%; top: -0.29%; font-size:2.5vh;}
+   #create-account-button-home a{line-height: 5.3em; margin-left: 5%; color: white; font-size: 1.4vh;text-decoration: none;}
+   img.logo{position: fixed; float: left; left:5vw; top: 0vh; z-index: 4; height: 3vw; width: 3vw; object-fit: cover;}
+   .testimony-container{position: absolute; width: 100%; height:80%; background-color: white; z-index: 0;}
+   #stats{position:absolute; top:58vh; height:30vh; width:71%; right:-83%; background-color: white; border-top: 0px;
+      border-right: 0px; border-left: 0px; border-bottom: 1px; border-style:solid; border-color: rgb(96, 108, 56);}
+   #about-text-container h1{font-family: SuperGroteskA; font-size: 3vh; color: white; margin-left: 5%;}
+   #about-text-container p{font-family: SuperGroteskA; font-size: 2.5vh; color: white; margin-left: 10%; margin-right:5%}
+}
+@media only screen and (max-width: 1440px){
+   .menu-bar a{
+      font-size:1.3vh; line-height: 4.5em;
+   }
+   #company-name h1{position:fixed; left: 12%; top: 1%; font-size:2vh}
+   #company-name h2{position:fixed; left: 20%; top: 0.85%; font-size:2vh;}
+   #create-account-button-home a{line-height: 5.6em; margin-left: 5%; color: white; font-size: 1.2vh;text-decoration: none;}
+   img.logo{position: fixed; float: left; left:5vw; top: 1vh; z-index: 4; height: 3vw; width: 3vw; object-fit: cover;}
+}
+@media only screen and (max-width: 888px){
+   .menu-bar a{
+      font-size:1.3vh; line-height: 5em;
+   }
+   #company-name h1{position:fixed; left: 12%; top: 1%; font-size:2vh}
+   #company-name h2{position:fixed; left: 21.2%; top: 0.77%; font-size:2vh;}
+   #create-account-button-home a{line-height: 7.5em; margin-left: 5%; color: white; font-size: 1vh; text-decoration: none;}
+   img.logo{position: fixed; float: left; left:5vw; top: 1.5vh; z-index: 4; height: 3vw; width: 3vw; object-fit: cover;}
+   .donate-button{position: absolute; left: 30vw; top: 70vh; width: 20vw; height: 5vh; z-index:11;
+                  font-family: SuperGroteskA; font-size: 2vh; justify-content: center;}
+   #about-text-container{position:absolute; top:-23vh; height:23vh; width:30%; left:7%; background-color: rgb(96, 108, 56);}
+   #about-text-container h1{font-family: SuperGroteskA; font-size: 2.5vh; color: white; margin-left: 5%;}
+   #about-text-container p{font-family: SuperGroteskA; font-size: 1.5vh; color: white; margin-left: 5%; margin-right:5%}
+}
+@media only screen and (max-width: 500px){
+   .menu-bar a{
+      font-size:1.3vh; line-height: 4em; display:none;
+   }
+   #company-name h1{position:fixed; left: 12%; top: 1%; font-size:1.5vh}
+   #company-name h2{position:fixed; left: 30%; top: 0.85%; font-size:1.5vh;}
+   #create-account-button-home a{line-height: 4em; margin-left: 20%; color: white; font-size: 1.8vh;text-decoration: none; display:none}
+}
+

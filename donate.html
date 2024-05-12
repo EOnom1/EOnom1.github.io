@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no,minimum-scale=1, maximum-scale=1">
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <LINK REL = "stylesheet" TYPE="text/css" HREF = "mystyles.css">         <!-- Link to external CSS stylesheet-->
+        <LINK REL="icon" type="image/x-icon" href="assets/logo.png">         <!-- Add a tiny icon on the page title-->
+        <title> Donate </title>                                                            <!-- Set the page title-->
+    </head>
+    <body>
+        <!-- Declare variables at the top. These are error messages that will be displayed in the alert boxes-->
+        <script>
+            var newsletterMessage = "You can't sign up to the newsletter yet."
+            var searchMessage = "You can't search the website yet"
+        </script>
+        <header class = "menu-header">      <!-- Menu header created as a class so it can be used across different pages
+                                                 for consistency -->
+            <div id="company-name">
+                <h1> The Cyber </h1>
+                <h2> Foundation</h2>
+            </div>
+            <a href="Index.html">
+                <img class= "logo" SRC="assets/logo.png" ALT="logo">            <!-- Insert logo in the header-->
+                </a> <!-- Charity logo: alt to provide information to
+                                                                        the user in case the image doesn't load-->
+            <nav class = "menu-bar"> <!-- Navgational menu bar-->
+                <span>
+                        <!-- Navigational links for the menu-->
+                        <!-- <a style = "background-color: grey;" href="Index.html">Home</a> Set the box background to
+                                                                                               grey to indicate current
+                                                                                               page -->
+                        <a href="news.html">News</a> 
+                        <a href="about%20us.html">About Us</a> 
+                        <a style = "border:1px; border-style:solid; border-top:0px;border-right:0px;border-left:0px;" href="donate.html">Donate</a> 
+                        <a href="login.html">Log In</a>
+                </span>
+            </nav>
+            <div id = "create-account-button-home">
+                <a href="login.html">CREATE YOUR ACCOUNT TODAY</a>
+            </div>
+        </header>
+
+        <div class = "front-page">
+            <div class = "newspage-container">                    <!-- Container where the about us video will be placed -->
+                <!-- The background video will be placed in this container. Autoplay, muted and looped is used so the video
+                     plays automatically, with no volume and loops so it plays forever-->
+                     <img id="background-video" src = "assets/donateimage.jpg" alt="Picture of a patient">
+                     <div id = "about-border">
+                        <p> Donate</p>
+                     </div>
+            </div>
+            <div id ="donate-filler">
+                <h1> Supporting The Cyber Foundation</h1>
+                <p> The Cyber Foundation welcomes donators from all over the world to pledge contributions in support of
+                    the United Kingdom's health service. Contributions in any amount and welcomed, and gratefully received.
+                    Your support is incredibly valuable to us and the team.
+                </p>
+            </div>
+            <div id ="donate-box-container">
+                <h1> Select an amount</h1>
+                <div onclick="window.alert('Redirect to PayPal blocked')" id="donate-amount1">
+                    <p> OTHER </p>
+                </div>
+                <div onclick="window.alert('Redirect to PayPal blocked')" id="donate-amount2">
+                    <p> £500 </p>
+                </div>
+                <div onclick="window.alert('Redirect to PayPal blocked')" id="donate-amount3">
+                    <p> £100 </p>
+                </div>
+                <div onclick="window.alert('Redirect to PayPal blocked')" id="donate-amount4">
+                    <p> £50 </p>
+                </div>
+                <div onclick="window.alert('Redirect to PayPal blocked')" id="donate-amount5">
+                    <p> £25 </p>
+                </div>
+            </div>
+        </div>
+
+<footer class = "menu-footer-accounts">
+    <div class = "menu-bar-footer-accounts">
+        <span>
+                <a href="Privacy.html"> Privacy</a> 
+                <a href="Cookies.html">Cookies</a> 
+                <a href="Legal.html"> Legal</a> 
+        </span>
+    </div>
+    <div class = "menu-bar-footer-accounts-socials">
+        <span>
+                <a href="https://www.youtube.com/thecyberfoundation">
+                <img class= "youtube logo" SRC="assets/youtube-logo.png" ALT="YouTube logo">
+                </a>
+                <a href="https://www.facebook.com/thecyberfoundation">
+                    <img class= "facebook logo" SRC="assets/facebook-logo.png" ALT="Facebook logo">
+                </a> 
+                <a href="https://www.x.com/thecyberfoundation">
+                    <img class= "twitter logo" SRC="assets/twitter-logo.png" ALT="Twitter logo">
+                </a>
+                <a href="https://www.instagram.com/thecyberfoundation">
+                    <img class= "instagram logo" SRC="assets/instagram-logo.png" ALT="Instagram logo">
+                </a>
+                <a href="https://www.linkedin.com/thecyberfoundation">
+                    <img class= "linkedin logo" SRC="assets/linkedin-logo.png" ALT="LinkedIn logo">
+                </a>
+        </span>
+    </div>
+</footer>
+<footer class = "legal-note">
+    © 2024 The Cyber Foundation <br> Registration number (831831)
+</footer>
+</body>
+</html>

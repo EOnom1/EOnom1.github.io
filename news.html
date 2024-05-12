@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no,minimum-scale=1, maximum-scale=1">
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <LINK REL = "stylesheet" TYPE="text/css" HREF = "mystyles.css">         <!-- Link to external CSS stylesheet-->
+        <LINK REL="icon" type="image/x-icon" href="assets/logo.png">         <!-- Add a tiny icon on the page title-->
+        <title> News </title>                                                            <!-- Set the page title-->
+    </head>
+    <body>
+        <!-- Declare variables at the top. These are error messages that will be displayed in the alert boxes-->
+        <script>
+            var newsletterMessage = "You can't sign up to the newsletter yet."
+            var searchMessage = "You can't search the website yet"
+        </script>
+        <header class = "menu-header">      <!-- Menu header created as a class so it can be used across different pages
+                                                 for consistency -->
+            <div id="company-name">
+                <h1> The Cyber </h1>
+                <h2> Foundation</h2>
+            </div>
+            <a href="index.html">
+                <img class= "logo" SRC="assets/logo.png" ALT="logo">            <!-- Insert logo in the header-->
+                </a> <!-- Charity logo: alt to provide information to
+                                                                        the user in case the image doesn't load-->
+            <nav class = "menu-bar"> <!-- Navgational menu bar-->
+                <span>
+                        <!-- Navigational links for the menu-->
+                        <!-- <a style = "background-color: grey;" href="Index.html">Home</a> Set the box background to
+                                                                                               grey to indicate current
+                                                                                               page -->
+                        <a style = "border:1px; border-style:solid; border-top:0px;border-right:0px;border-left:0px;" href="news.html">News</a> 
+                        <a href="about%20us.html">About Us</a> 
+                        <a href="donate.html">Donate</a> 
+                        <a href="Login.html">Log In</a>
+                </span>
+            </nav>
+            <div id = "create-account-button-home">
+                <a href="login.html">CREATE YOUR ACCOUNT TODAY</a>
+            </div>
+        </header>
+        <div class = "front-page-news">
+            <div class = "newspage-container">              <!-- Container where the news video will be placed inside-->
+                <!-- Background video to be placed in the newspage container. Set to play automatically in a loop while
+                     muted -->
+                <img id="background-video-image" SRC="assets/news-background-image.jpg" alt="Picture of buildings">
+                <div class = "latest-news">               <!-- Div placed in the newspage container for the news text-->
+                    <p>
+                        <b> Latest Articles</b> <br>
+                         <!-- Testimony text. <b> is used to format the text bold-->
+                    </p>
+                    <div class = "wrapper">
+                        <div class = "news-article-container"> box-1  <img src="assets/conference.jpg" alt="picture of conference">
+                           </div>
+                        <div class = "news-article-container"> box-2  <img src="assets/news9.webp" alt="picture of party">
+                        </div>
+                        <div class = "news-article-container"> box-3  <img src="assets/news8.jpg" alt="picture of conference">
+                        </div>
+                        <div class = "news-article-container"> box-4  <img src="assets/news3.jpg" alt="picture of conference">
+                        </div>
+                        <div class = "news-article-container"> box-5  <img src="assets/news1.jpg" alt="picture of conference">
+                        </div>
+                        <div class = "news-article-container"> box-6  <img src="assets/news11.jpg" alt="picture of conference">
+                        </div>
+                    </div>
+                </div>
+                    
+                </div>
+            <div class = "news-bridge-container">               <!-- Container white space between image and products-->
+                <!-- Drop down menu button where the user can select different categories of news -->
+                <div id = "categories-button">
+                    <a href="https://www.example.com"> Newsletter </a>
+                    <!-- Dropdown icon-->
+                <div class = "newsletter-email-form-news">
+                        <form onsubmit=(alert(newsletterMessage))>     <!-- Execute JScript to fetch page-->
+                            <input id="newsletter-email-box2" autocomplete="on" size="30" placeholder="Email Address*">
+                        </form>
+                </div>
+                <div class = "newsletter-signup-button">       <!-- Donate button created as a class so it can be used on different
+                    pages-->
+                    <a href="Donate.html"><b> SIGN UP </b></a>          <!-- Link the donate button to the donate page-->
+                </div>
+                </div>
+            </div>
+
+
+            <div class = "wrapper2">
+                <div class = "news-individual-article-container1">  </div>
+                <div class = "news-individual-article-container1-text"> 
+                    <h1> 10.05.2024 </h1>
+                    <h2> <b> Seminar - The Hospital Society </b></h2>
+                    <p> The Cyber Foundation meets with industry experts to discuss new initiatives.</p>
+                    <a href = "https://www.example.com"> READ MORE ➔</a>
+                </div>
+                <div class = "news-individual-article-container2"> </div>
+                <div class = "news-individual-article-container2-text">
+                    <h1> 08.05.2024 </h1>
+                    <h2> <b> Sports - Team GB Sponsorship </b></h2>
+                    <p> We're proud to be the official sponsors of Team GB.</p>
+                    <a href = "https://www.example.com"> READ MORE ➔</a>
+                </div>
+                <div class = "news-individual-article-container3"> </div>
+                <div class = "news-individual-article-container3-text">
+                    <h1> 06.05.2024 </h1>
+                    <h2> <b> Campaign - NYC Visit </b></h2>
+                    <p> The team are running a fundraiser in the Big Apple to raise awareness for lack of equipment in hospitals.</p>
+                    <a href = "https://www.example.com"> READ MORE ➔</a>
+                </div>
+                <div class = "news-individual-article-container4"> </div>
+                <div class = "news-individual-article-container4-text">
+                    <h1> 03.05.2024 </h1>
+                    <h2> <b> Conference - London, GB </b></h2>
+                    <p> A conference is taking place in the O2 arena in London to discuss our plans to expand.</p>
+                    <a href = "https://www.example.com"> READ MORE ➔</a>
+                </div>
+
+                
+                <div class = "news-individual-article-container5"> </div>
+                <div class = "news-individual-article-container5-text">
+                    <h1> 01.05.2024 </h1>
+                    <h2> <b> Conference - Zurich, Switzerland </b></h2>
+                    <p> Thank you to all of those who attended our conference outlining our plans to partner in Switzerland.</p>
+                    <a href = "https://www.example.com"> READ MORE ➔</a>
+                </div>
+                <div class = "news-individual-article-container6"></div>
+                <div class = "news-individual-article-container6-text">
+                    <h1> 28.04.2024 </h1>
+                    <h2> <b> Sports - Tennis Sponsorship </b></h2>
+                    <p> Our team were out today and handed out 400 flyers to spread our cause.</p>
+                    <a href = "https://www.example.com"> READ MORE ➔</a>
+                </div>
+                <div class = "news-individual-article-container7"> </div>
+                <div class = "news-individual-article-container7-text">
+                    <h1> 25.04.2024 </h1>
+                    <h2> <b> Community - Tea Event </b></h2>
+                    <p> Our loyal donators enjoyed a private dining event in London.  </p>
+                    <a href = "https://www.example.com"> READ MORE ➔</a>
+                </div>
+                <div class = "news-individual-article-container8">  </div>
+                <div class = "news-individual-article-container8-text">
+                    <h1> 21.04.2024 </h1>
+                    <h2> <b> Campaign - Gloucestershire </b></h2>
+                    <p> The team at The Cyber Foundation visited Cotswold to deliver a speech on our cause. </p>
+                    <a href = "https://www.example.com"> READ MORE ➔</a>
+                </div>
+
+
+
+                <div class = "news-individual-article-container9"> </div>
+                <div class = "news-individual-article-container9-text">
+                    <h1> 18.04.2024 </h1>
+                    <h2> <b> Party - Shoreditch </b></h2>
+                    <p> Our annual event for our members went smoothly today. Thank you to the team and everyone who helped
+                        to organise.
+                    </p>
+                    <a href = "https://www.example.com"> READ MORE ➔</a>
+                </div>
+                <div class = "news-individual-article-container10"> </div>
+                <div class = "news-individual-article-container10-text">
+                    <h1> 14.04.2024 </h1>
+                    <h2> <b> Community - London </b></h2>
+                    <p> Thank you to everyone that attended our community get together. </p>
+                    <a href = "https://www.example.com"> READ MORE ➔</a>
+                </div>
+                <div class = "news-individual-article-container11">  </div>
+                <div class = "news-individual-article-container11-text">
+                    <h1> 10.04.2024 </h1>
+                    <h2> <b> Campaign - London </b></h2>
+                    <p> Big thanks to the team at The Cyber Foundation for helping out in the London Marathon and
+                        spreading our cause.  </p>
+                    <a href = "https://www.example.com"> READ MORE ➔</a>
+                </div>
+                <div class = "news-individual-article-container12"> </div>
+                <div class = "news-individual-article-container12-text">
+                    <h1> 03.04.2024 </h1>
+                    <h2> <b> Fundraiser - London </b></h2>
+                    <p> Thank you to all of our members who helped out in our fundraiser today. £1400 was raised! </p>
+                    <a href = "https://www.example.com"> READ MORE ➔</a>
+                </div>
+
+
+            </div>
+        </div>
+
+
+<!-- Footer at the bottom of the page that provides legal information and social media page hyperlinks-->
+<footer class = "menu-footer-accounts-news">
+    <div class = "menu-bar-footer-accounts">
+        <span>
+                <a href="Privacy.html"> Privacy</a> 
+                <a href="Cookies.html">Cookies</a> 
+                <a href="Legal.html"> Legal</a> 
+        </span>
+    </div>
+    <div class = "menu-bar-footer-accounts-socials">
+        <span>
+                <a href="https://www.youtube.com/thecyberfoundation">
+                <img class= "youtube logo" SRC="assets/youtube-logo.png" ALT="YouTube logo">
+                </a>
+                <a href="https://www.facebook.com/thecyberfoundation">
+                    <img class= "facebook logo" SRC="assets/facebook-logo.png" ALT="Facebook logo">
+                </a> 
+                <a href="https://www.x.com/thecyberfoundation">
+                    <img class= "twitter logo" SRC="assets/twitter-logo.png" ALT="Twitter logo">
+                </a>
+                <a href="https://www.instagram.com/thecyberfoundation">
+                    <img class= "instagram logo" SRC="assets/instagram-logo.png" ALT="Instagram logo">
+                </a>
+                <a href="https://www.linkedin.com/thecyberfoundation">
+                    <img class= "linkedin logo" SRC="assets/linkedin-logo.png" ALT="LinkedIn logo">
+                </a>
+        </span>
+    </div>
+</footer>
+<!-- Footer at the bottom of the page to show that the charity is legally compliant-->
+<footer class = "legal-note-news">
+    © 2024 The Cyber Foundation <br> Registration number (831831)
+</footer>
+</body>
+</html>

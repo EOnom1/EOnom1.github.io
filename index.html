@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no,minimum-scale=1, maximum-scale=1">
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <LINK REL = "stylesheet" TYPE="text/css" HREF = "mystyles.css">         <!-- Link to external CSS stylesheet-->
+        <LINK REL="icon" type="image/x-icon" href="assets/logo.png">         <!-- Add a tiny icon on the page title-->
+        <title> Home Page </title>                                                            <!-- Set the page title-->
+    </head>
+    <body>
+        <!-- Declare variables at the top. These are error messages that will be displayed in the alert boxes-->
+        <script>
+            var newsletterMessage = "You can't sign up to the newsletter yet."
+            var searchMessage = "You can't search the website yet"
+        </script>
+        <header class = "menu-header">      <!-- Menu header created as a class so it can be used across different pages
+                                                 for consistency -->
+            <div id="company-name">
+                <h1> The Cyber </h1>
+                <h2> Foundation</h2>
+            </div>
+            <img class= "logo" SRC="assets/logo.png" ALT="logo"> <!-- Charity logo: alt to provide information to
+                                                                        the user in case the image doesn't load-->
+            <nav class = "menu-bar"> <!-- Navgational menu bar-->
+                <span>
+                        <!-- Navigational links for the menu-->
+                        <!-- <a style = "background-color: grey;" href="Index.html">Home</a> Set the box background to
+                                                                                               grey to indicate current
+                                                                                               page (removed for now) -->
+                        <a href="news.html">News</a> 
+                        <a href="about%20us.html">About Us</a> 
+                        <a href="donate.html">Donate</a> 
+                        <a href="login.html">Log In</a>
+                </span>
+            </nav>
+            <div id = "create-account-button-home">
+                <a href="Login.html">CREATE YOUR ACCOUNT TODAY</a>
+            </div>
+        </header>
+        <div class = "front-page"> <!-- Main container that controls the sizing of the page-->
+            <div class = "testimony-container"> <!-- Container where the testimony video will be placed inside-->
+                <!-- Background video to be placed in the testimony container. Set to play automatically in a loop while
+                     muted -->
+                <video id="background-video" autoplay muted loop SRC="assets/video.mp4">
+                </video>
+            </div>
+            <div class = "front-page-what-we-do">
+                <div class = "testimony">           <!-- Div placed in the testimony container for the testimony text-->
+                    <h1> THE UK'S LEADING CHARITY SERVING THOUSANDS OF INSTITUTIONS <br></h1>
+                    
+                    <p>
+                        "The Cyber Foundation has had a massive impact on our clinic. We can now afford to continue
+                         saving lives"
+                        <b> - Croft's Medical Practice </b>  <!-- Testimony text. <b> is used to format the text bold-->
+                    </p>
+                </div>
+                <div class = "donate-button">       <!-- Donate button created as a class so it can be used on different
+                    pages-->
+                    <a href="Donate.html"><b> DONATE</b></a>          <!-- Link the donate button to the donate page-->
+                </div>
+                <div id="about-text-container">
+                    <h1> Our Core Aims and Values </h1>
+                    <p> The Cyber Foundation has people rooted at its center. We aim to provide <b>every</b> healthcare
+                        provider with the technology they cannot afford.</p>
+                </div>
+                <div id="stats">
+                    <h1> 2400 </h1>
+                    <h2> 3000 </h2>
+                    <h3> 200 </h3>
+                    <!-- Increment numbers ocassionally-->
+                    <script src="updateDonator.js" defer></script>
+                    <script src="updateEquipment.js" defer></script>
+                    <script src="updateHospital.js" defer></script>
+                    <nav class = "stats-row">
+                    <ul>
+                        <li> DONATORS </li>
+                        <li> DELIVERED EQUIPMENT</li>
+                        <li> HOSPITALS HELPED </li>
+                    </ul>
+                    </nav>
+                </div>
+                <div id= "middle-page">
+                    <img alt="crown" id="crown" src="assets/crown.png">
+                    <h1> YOUR HEALTH, OUR PRIORITY </h1>
+                    <p> The Cyber Foundation is a non-profit organisation established in 1890. We pledge to dedicate 100% of
+                        our proceeds to furthering our cause.
+                    </p>
+                </div>
+                <div id = "bottom-page">
+                    <h1> OUR CLIENTS </h1>
+                    <p> The Cyber Foundation's core clients </p>
+                    <img id="hospital-patient" alt="Picture of a hospital patient" src = "assets/home-clients.jpg"> 
+                    <!-- (doesnt work) Create a learn more button-->
+                    <div id="learn-more-button">
+                        <a href="about%20us.html"><h1> Learn more </h1></a>
+                    </div>
+                    <!-- Form where you can enter your email to register for the newsletter-->
+                    <div class = "newsletter-firstname-form">
+                        <form onsubmit=(alert(newsletterMessage))>     <!-- Execute JScript to fetch page-->
+                            <input id="newsletter-firstname-box" autocomplete="on" size="30" placeholder="First Name*">
+                        </form>
+                    </div>
+                    <div class = "newsletter-lastname-form">
+                        <form onsubmit=(alert(newsletterMessage))>     <!-- Execute JScript to fetch page-->
+                            <input id="newsletter-lastname-box" autocomplete="on" size="30" placeholder="Last Name*">
+                        </form>
+                    </div>
+                    <div class = "newsletter-email-form">
+                        <form onsubmit=(alert(newsletterMessage))>     <!-- Execute JScript to fetch page-->
+                            <input id="newsletter-email-box" autocomplete="on" size="30" placeholder="Email Address*">
+                        </form>
+                    </div>
+                    <!-- Create a submit button for the newsletter-->
+                    <div onclick="alert('You cant signup to the newsletter yet')" id="newsletter-submit-button">
+                        <a href="index.html"><h1>  Submit </h1></a>
+                    </div>
+                    <!-- Create text boxes for the about-->
+                    <!-- Signup container where text about the newsletter is displayed-->
+                    <div id="newsletter-signup-container"></div>
+                    <div id = "newsletter-text-container">
+                        <h1> SIGN UP TO OUR NEWSLETTER HERE</h1>
+                        <p> Receive weekly updates and news straight in your email</p>
+                    </div>
+                </div>
+            </div>
+            <div class = arrow-animation>                   <!-- Class that gives the arrow animation functionalities-->
+                <!-- When the arrow is clicked scroll the page down until the about section.
+                     Link the arrow to the source file with an alt text to be displayed if the image fails to load. -->
+                <img onclick=(window.scroll(0,0))  class= "arrow" SRC="removed!/arrow.png" ALT="arrow">
+            </div>
+            <div class = "about-container"> <!-- Container where information of the charity will be displayed-->
+                <!-- (removed) Create div containers for the images-->
+             
+                
+               
+            </div>
+        </div>
+    <!-- Footer at the bottom of the page that provides legal information and social media page hyperlinks-->
+    <footer class = "menu-footer-accounts">
+        <div class = "menu-bar-footer-accounts">
+            <span>
+                    <a href="Privacy.html"> Privacy</a> 
+                    <a href="Cookies.html">Cookies</a> 
+                    <a href="Legal.html"> Legal</a> 
+            </span>
+        </div>
+        <div class = "menu-bar-footer-accounts-socials">
+            <span>
+                    <a href="https://www.youtube.com/thecyberfoundation">
+                    <img class= "youtube logo" SRC="assets/youtube-logo.png" ALT="YouTube logo">
+                    </a>
+                    <a href="https://www.facebook.com/thecyberfoundation">
+                        <img class= "facebook logo" SRC="assets/facebook-logo.png" ALT="Facebook logo">
+                    </a> 
+                    <a href="https://www.x.com/thecyberfoundation">
+                        <img class= "twitter logo" SRC="assets/twitter-logo.png" ALT="Twitter logo">
+                    </a>
+                    <a href="https://www.instagram.com/thecyberfoundation">
+                        <img class= "instagram logo" SRC="assets/instagram-logo.png" ALT="Instagram logo">
+                    </a>
+                    <a href="https://www.linkedin.com/thecyberfoundation">
+                        <img class= "linkedin logo" SRC="assets/linkedin-logo.png" ALT="LinkedIn logo">
+                    </a>
+            </span>
+        </div>
+    </footer>
+    <!-- Footer at the bottom of the page to show that the charity is legally compliant-->
+    <footer class = "legal-note">
+        © 2024 The Cyber Foundation <br> Registration number (831831)
+    </footer>
+</body>
+</html>

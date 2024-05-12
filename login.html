@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <LINK REL = "stylesheet" TYPE="text/css" HREF = "mystyles.css">         <!-- Link to external CSS stylesheet-->
+        <LINK REL="icon" type="image/x-icon" href="assets/logo.png">         <!-- Add a tiny icon on the page title-->
+        <title> Login </title>                                                                <!-- Set the page title-->
+    </head>
+      
+    <body>
+        <!-- The HTML doesn't allow the message to be typed directly in in-line events so I had to create a variable,
+             store it there, then reference the variable in the onclick event.-->
+        <script>
+            var createMessage = "Account registration has been disabled. Please try again later."
+            var loginMessage = "Incorrect username or password"
+            var loginMessageForm = "Incorrect username or password."
+        </script>
+        <header class = "menu-header-accounts">
+            <a href="index.html">
+            <img class= "logo-accounts" SRC="assets/logo.png" ALT="logo">
+            </a>
+            <div class = "search-expansion">
+            </div>
+            <nav class = "menu-bar-accounts">
+                <span>
+                        <a href="login.html">
+                            <img class= "account-icon" SRC="assets/account-icon.png" ALT="Account Icon">
+                        </a>
+                        <a onclick="alert('You must be logged in to access the wishlist')" href="login.html">
+                            <img class= "wishlist-icon" SRC="assets/wishlist-icon.png" ALT="Wishlist Icon">
+                        </a>
+                        <a onclick="alert('You must be logged in to access the basket')" href="login.html">
+                            <img class= "basket-icon" SRC="assets/basket-icon.png" ALT="Basket Icon">
+                        </a> 
+                        <a onclick="alert('You must have an account to search')" href="login.html">
+                            <img class= "search-icon" SRC="assets/search-icon.png" ALT="Search Icon">
+                        </a> 
+                </span>
+            </nav>
+            
+        </header>
+        <div class = "login-front-page">
+            <div class = "login-main-container">
+                <img alt="backdrop" id="login-main-image" SRC="assets/main-login-image.jpg" >
+            </div>
+            <div id="login-container">
+                <h1> Login</h1>
+                <p> Email address </p>
+                <div class = "login-email-form">
+                    <!-- Show an error message that you can't login when the user presses enter on the form -->
+                    <form onsubmit=(alert(loginMessageForm))> <!-- Execute JScript to fetch page-->
+                        <input id="login-email-box" autocomplete="on" size="10">
+                    </form>
+                    <a href="https://www.example.com"> Forgotten your email address? </a>
+                </div>
+                <p> Password </p>
+                <div class = "login-password-form">
+                    <!-- Show an error message that you can't login when the user presses enter on the form -->
+                    <form onsubmit=(alert(loginMessageForm))> <!-- Execute JScript to fetch page-->
+                        <input id="login-password-box" type='password' autocomplete="off" size="10">
+                    </form>
+                    <!-- JScript to show password-->
+                    <input type="checkbox" id="show-password" name="password-visible" value="password"
+                           size="20"> Show password
+                    <!-- Script that allows the password to be unhidden and hidden. When you click the checkbox this
+                         executes the script. When the element is checked and unchecked, the type of input changes between
+                         text and password. -->
+                    <script>
+                        document.getElementById('show-password').onclick =
+                        function() {
+                            if ( this.checked ) {
+                                document.getElementById('login-password-box').type="text";
+                        } else {
+                            document.getElementById('login-password-box').type="password";}
+                        }
+                    </script>
+                    <a href="https://www.example.com"> <br> Forgotten your password? </a>
+                </div>
+                <!-- Show an error message that you can't login when the user presses the continue button. -->
+                <div onclick=(alert(loginMessage)) class = "login-button">
+                    <a href="login.html"><b>Continue</b></a>
+                </div>
+            </div>
+            <div id="create-account-container">
+                <h1> Create an account</h1>
+                <p> If you're not already registered, you can create a new account. You'll need an account to:</p>
+                    <ul>
+                        <li>View Payments</li>
+                        <li>Manage Donations</li>
+                        <li>Access The Charity Shop</li>
+                    </ul>
+                <div onclick=(alert(createMessage)) class = "register-button">
+                    <a href="login.html"><b> Create an account</b> </a>
+                </div>
+            </div>
+        </div>
+
+        
+    <footer class = "menu-footer-accounts1">
+        <div class = "menu-bar-footer-accounts">
+            <span>
+                    <a href="Privacy.html"> Privacy</a> 
+                    <a href="Cookies.html">Cookies</a> 
+                    <a href="Legal.html"> Legal</a> 
+            </span>
+        </div>
+        <div class = "menu-bar-footer-accounts-socials">
+            <span>
+                    <a href="https://www.youtube.com/thecyberfoundation">
+                    <img class= "youtube logo" SRC="assets/youtube-logo.png" ALT="YouTube logo">
+                    </a>
+                    <a href="https://www.facebook.com/thecyberfoundation">
+                        <img class= "facebook logo" SRC="assets/facebook-logo.png" ALT="Facebook logo">
+                    </a> 
+                    <a href="https://www.x.com/thecyberfoundation">
+                        <img class= "twitter logo" SRC="assets/twitter-logo.png" ALT="Twitter logo">
+                    </a>
+                    <a href="https://www.instagram.com/thecyberfoundation">
+                        <img class= "instagram logo" SRC="assets/instagram-logo.png" ALT="Instagram logo">
+                    </a>
+                    <a href="https://www.linkedin.com/thecyberfoundation">
+                        <img class= "linkedin logo" SRC="assets/linkedin-logo.png" ALT="LinkedIn logo">
+                    </a>
+            </span>
+        </div>
+    </footer>
+    <footer class = "legal-note-accounts">
+        © 2024 The Cyber Foundation <br> Registration number (831831)
+    </footer>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- This is a HTML of a table and submission form by Evans Onomerike where I can see
+     my timetable and submit a request to change my group -->
+<html>
+
+<head>
+    <LINK REL = "stylesheet" TYPE="text/css" HREF = "mystyles.css"/>               <!-- This links the CSS stylesheet-->
+    <title> View Your Timetable </title>                                           <!-- This is the page title -->
+</head>
+
+<body>
+    <div class ="navbar">                 <!-- Making the navbar a class allows it to be edited in the CSS stylesheet-->
+        <h2><img style = "float:left; position:relative; bottom: 18px; left: 30px;" SRC="UEL.jpg", border="0",
+                 height = "60", width="60", alt="UEL Logo"> Evans Onomerike's Timetable </h2>
+        
+         <div class = "navcontent"> <!-- This is the navigation design for the top of the page. Students can navigate to
+                                         any of the following relevant pages from their timetable -->
+
+            <a HREF = https://uel.ac.uk ><span>  Home </span></a> <!-- Span allows for the different selections to span
+                                                                       across the page horizontally-->
+            <a HREF = https://moodle.uel.ac.uk/my/courses ><span> My-Courses </span></a> 
+            <a HREF = https://moodle.uel.ac.uk><span> Moodle </span></a>
+            <a HREF = https://uelac.sharepoint.com/sites/trackmyfuture ><span> Track-My-Future </span></a>
+            <a HREF = https://myportal.uel.ac.uk/ ><span> Launchpad </span></a> 
+            <a HREF = https://uel.ac.uk/study/students/uel-direct><span> UEL-Direct </span></a>
+            <a HREF = https://www.example.com ><span>  Change-Profile </span></a>
+            <a HREF = https://www.example.com ><span> About-Us </span></a> 
+            <a HREF = https://www.example.com><span> Report-Problem </span></a>
+        </div>
+    </div>
+    <br>
+         <table border = "1" width ="78%">                                                    <!-- This is the table -->
+
+         <caption><b> Week Starting February 12th </b></caption>                   <!-- These are table headings for the
+                                                                                       days of the week -->
+         <thead>
+                <TR>
+                    <TH> Monday </TH>
+                    <TH> Tuesday </TH>
+                    <TH> Wednesday </TH>
+                    <TH> Thursday </TH>
+                    <TH> Friday </TH>
+                </TR>
+          </thead>
+          <tbody>
+            <!-- The table data is contained below -->
+            <TR>
+                <TD style="background-color: aquamarine; width: 20%;"> CN4003: Web Technologies - Lecture </TD>
+                <TD> No Classes </TD>
+                <TD style="background-color: pink; width: 20%;"> CN4005: Mental Wealth - Drop in </TD>
+                <TD style="background-color: burlywood; width: 20%;"> CN4003: Web Technologies - Practical </TD>
+                <TD> No Classes </TD>
+            </TR>
+            <TR>
+                <TD style="background-color: aquamarine;"> CN4005: Mental Wealth - Lecture </TD>
+                <TD> No Classes </TD>
+                <TD style="background-color: burlywood;"> CN4002: Computer Systems and Networks - Practical </TD>
+                <TD style="background-color: burlywood;"> CN4005: Mental Wealth - Practical</TD>
+                <TD> No Classes</TD>
+            </TR>
+            <TR>
+                <TD style="background-color: aquamarine;"> CN4002: Computer Systems and Networks - Lecture</TD>
+                <TD> No Classes </TD>
+                <TD style="background-color: rgb(125, 125, 189)"> CN4005: Mental Wealth - Weekly Seminar </TD>
+                <TD style="color: white; background-color: blue;"> CN4003: Web Technologies - Online Session </TD>
+                <TD> No Classes</TD>
+            </TR>
+          </tbody>
+         </table>
+
+         <div class ="weekmenu">
+            <h2> Week Starting </h2>                                              <!-- This is a left-hand side menu -->
+            <div class = "weekMenuContent">
+                <p><a HREF = "https://www.example.com"> January 15th </a></p>
+                <p><a HREF = "https://www.example.com"> January 22nd </a></p>
+                <p><a HREF = "https://www.example.com"> January 29th </a></p>
+                <p><a HREF = "https://www.example.com"> February 5th </a></p>
+                <p><a HREF = "https://www.example.com"> February 12th </a></p>
+                <p><a HREF = "https://www.example.com"> February 19th </a></p>
+                <p><a HREF = "https://www.example.com"> February 26th </a></p>
+                <p><a HREF = "https://www.example.com"> March 4th </a></p>
+            </div>
+         </div>
+
+         <br> <br> <br> <br> <br> <br> <br> <br> <br>
+         <h1> Change Your Group</h1>                                  <!-- This is a simple form to input your group -->
+         <p>
+         Enter your previous group here: <INPUT NAME ="group1" TYPE = "text" SIZE = "25" AUTOFOCUS NAME = ”g1”
+                                                PLACEHOLDER = "Group Number"> <!-- Placeholder shows text in the input
+                                                                                   field before input is given-->
+
+                                         <INPUT TYPE = "button" VALUE = "Submit"> <!-- Autofocus tag means the cursor
+                                                                                       automatically moves to the input
+                                                                                       field for the user-->
+         </p>
+         <p> Enter the group you would like to change to here: <INPUT NAME ="group2" TYPE = "text" SIZE = "25"
+                                                                      PLACEHOLDER = "Group Number"> 
+                                                               <INPUT TYPE = "button" VALUE = "Submit">
+         </p>
+         <p> <img class="large , align-left" style = "float:left; position:relative; top: 15px; bottom: 1px; right: 380px;" SRC="image1.jpg",
+                  border = "0", alt="Image of Books"></p>    <!-- This is an image of a book
+                                                                                              for page design. ALT image
+                                                                                              is included to give the
+                                                                                              user an idea of content
+                                                                                              if the page doesn't fully
+                                                                                              load -->
+
+         <ol title="Favourite subjects so far" type="1"> <!-- Ordered list example-->
+            <b>Favourite subjects so far:</b>
+            <li> Web Technologies </li>
+            <li> Mental Wealth </li>
+            <li> Computer Systems and Networks </li>
+         </ol>
+
+</body>
+</html>
